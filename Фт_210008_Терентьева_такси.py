@@ -24,3 +24,5 @@ for j in range(n):
 for j in range(n):
     tar= int(input(f"Введите тариф для {j+1} такси за километр: "))
     tak.append(taksi((j+1), tar))
+list.sort(rab, key=lambda rabotnik: rabotnik.kilom)
+list.sort(tak, reverse = True, key=lambda taksi: taksi.tarif)
