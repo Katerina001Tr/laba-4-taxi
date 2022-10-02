@@ -26,3 +26,12 @@ for j in range(n):
     tak.append(taksi((j+1), tar))
 list.sort(rab, key=lambda rabotnik: rabotnik.kilom)
 list.sort(tak, reverse = True, key=lambda taksi: taksi.tarif)
+for j in rab:
+    j.tar(l)
+    l=l+1
+for j in range(n):
+    sum = sum + (rab[j-1].kilom * tak[j-1].tarif)
+list.sort(rab, key=lambda rabotnik: rabotnik.num)
+for j in rab:
+    print (j.num, "работник отправится на такси №", j.taksi.num)
+print ("Общая сумма составляет:", sum)
