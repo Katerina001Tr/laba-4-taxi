@@ -9,7 +9,8 @@ class taksi:
     def __init__(self, num, t):
         self.num=num
         self.tarif = t
-n=int(input("Введите количество сотрудников от 1 до 1000: \n"))
+n=int(input("Введите количество сотрудников компании в диапазоне от 1 до 1000: \n"))
+if (n>=1) and (n<=1000):
 rab=[]
 tak = []
 sum = 0
@@ -19,7 +20,7 @@ b=100000
 i=0
 c=1
 for j in range(n):
-    kil = int(input(f"Введите расстояние в километрах для {j+1} работника: "))
+    kil = int(input(f"Введите расстояние в километрах от работы до дома для {j+1} работника: "))
     rab.append(rabotnik((j+1), kil))
 for j in range(n):
     tar= int(input(f"Введите тариф для {j+1} такси за километр: "))
@@ -33,8 +34,8 @@ for j in range(n):
     sum = sum + (rab[j-1].kilom * tak[j-1].tarif)
 list.sort(rab, key=lambda rabotnik: rabotnik.num)
 for j in rab:
-    print (j.num, "работник отправится на такси №", j.taksi.num)
-print ("Общая сумма составляет:", sum)
+    print (j.num, "работник отправится до дома на такси №", j.taksi.num)
+print ("Общая сумма, которую директор заплатит за такси составляет:", sum)
 try:
     a = sum
 except ValueError:
@@ -113,3 +114,5 @@ if (a6 == 0) and (a5 or a4 or a3 or a2 or a1 !=0):
     chislo += rub[2]
 chislo = chislo.capitalize()
 print(chislo)
+else:
+    print('Ошибка ввода')
